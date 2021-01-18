@@ -103,4 +103,57 @@ sudo gpasswd -a $USER docker     #将登陆用户加入到docker用户组中
 newgrp docker     #更新用户组</code></pre>
 ]]></content>
   </entry>
+  <entry>
+    <title>Java定时任务相关笔记</title>
+    <url>/2021/01/18/Java%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="ScheduledExecutorService-实现定时任务"><a href="#ScheduledExecutorService-实现定时任务" class="headerlink" title="ScheduledExecutorService 实现定时任务"></a>ScheduledExecutorService 实现定时任务</h2><p>创建线程池，通过线程池的方式来执行任务。</p>
+<pre><code>// private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+
+private ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);</code></pre>
+<p>第一次执行任务的延时时间（initialDelay），周期执行的时间间隔（period）。</p>
+<p>scheduleAtFixedRate：延时设定时间（initialDelay）后执行第一次任务，每隔时间间隔（period）再次执行任务。</p>
+<p>schedule：延时设定时间（initialDelay）后只执行一次任务。</p>
+<p>scheduleWithFixedDelay：延时设定时间（initialDelay）后执行第一次任务，随后每次任务执行完后延迟设定时间（delay）再次执行任务。</p>
+<hr>
+<h2 id="Scheduled参数及cron表达式解释"><a href="#Scheduled参数及cron表达式解释" class="headerlink" title="@Scheduled参数及cron表达式解释"></a>@Scheduled参数及cron表达式解释</h2><h3 id="Scheduled支持以下8个参数："><a href="#Scheduled支持以下8个参数：" class="headerlink" title="@Scheduled支持以下8个参数："></a>@Scheduled支持以下8个参数：</h3><p>1.cron：表达式，指定任务在特定时间执行；</p>
+<p>2.fixedDelay：表示上一次任务执行完成后多久再次执行，参数类型为long，单位ms；</p>
+<p>3.fixedDelayString：与fixedDelay含义一样，只是参数类型变为String；</p>
+<p>4.fixedRate：表示按一定的频率执行任务，即每次开始执行的时间间隔一致，参数类型为long，单位ms；</p>
+<p>5.fixedRateString: 与fixedRate的含义一样，只是将参数类型变为String；</p>
+<p>6.initialDelay：表示延迟多久再第一次执行任务，参数类型为long，单位ms；</p>
+<p>7.initialDelayString：与initialDelay的含义一样，只是将参数类型变为String；</p>
+<p>8.zone：时区，默认为当前时区。</p>
+<p>格式如下：</p>
+<pre><code>@Scheduled(cron = &quot;0/5 * * * * ?&quot;)
+
+@Scheduled(fixedRate=5000)</code></pre>
+<p><strong>常用表达式示例：</strong></p>
+<ul>
+<li>0/2 * * * * ? 表示每2秒 执行任务</li>
+<li>0 0/2 * * * ? 表示每2分钟 执行任务</li>
+<li>0 0 2 1 * ? 表示在每月的1日的凌晨2点调整任务</li>
+<li>0 15 10 ? * MON-FRI 表示周一到周五每天上午10:15执行作业</li>
+<li>0 0 10,14,16 * * ? 每天上午10点，下午2点，4点</li>
+<li>0 0/30 9-17 * * ? 朝九晚五工作时间内每半小时</li>
+<li>0 0 12 ? * WED 表示每个星期三中午12点</li>
+<li>0 0 12 * * ? 每天中午12点触发</li>
+<li>0 15 10 ? * * 每天上午10:15触发</li>
+<li>0 15 10 * * ? 每天上午10:15触发</li>
+<li>0 15 10 * * ? 每天上午10:15触发</li>
+<li>0 * 14 * * ? 在每天下午2点到下午2:59期间的每1分钟触发</li>
+<li>0 0/5 14 * * ? 在每天下午2点到下午2:55期间的每5分钟触发</li>
+<li>0 0/5 14,18 * * ? 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发</li>
+<li>0 0-5 14 * * ? 在每天下午2点到下午2:05期间的每1分钟触发</li>
+<li>0 10,44 14 ? 3 WED 每年三月的星期三的下午2:10和2:44触发</li>
+<li>0 15 10 ? * MON-WED,SAT 周一至周三和周六的上午10:15触发</li>
+<li>0 15 10 15 * ? 每月15日上午10:15触发</li>
+<li>0 15 10 L * ? 每月最后一日的上午10:15触发</li>
+<li>0 15 10 ? * 6L 每月的最后一个星期五上午10:15触发</li>
+<li>0 15 10 ? * 6#3 每月的第三个星期五上午10:15触发</li>
+</ul>
+<hr>
+<p><strong>/</strong> 表示起始时间开始触发，然后每隔固定时间触发一次。例如在minutes域使用5/20,则意味着5分钟触发一次” 这个不对，应该是表示当前小时的第5分钟开始执行，每20分钟触发一次</p>
+<hr>
+]]></content>
+  </entry>
 </search>
