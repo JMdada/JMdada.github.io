@@ -76,7 +76,7 @@ docker rmi portainer/portainer,">
 <p>4.拉取新的镜像，<strong>注意portainer从2.0.0版本镜像名字改为portainer/portainer-ce</strong></p>
 <pre><code>docker pull portainer/portainer-ce</code></pre>
 <p>5.使用新的镜像启动新的容器</p>
-<pre><code>docker run -d -p 8088:9000 -v /var/run/docker.sock:/var/run/docker.sock --restart=always --name portainer portain</code></pre>
+<pre><code>docker run -d -p 8088:9000 -v /var/run/docker.sock:/var/run/docker.sock --restart=always --name portainer portainer/portainer-ce</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
