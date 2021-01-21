@@ -5,12 +5,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Archive</title>
+    <title>Docker管理界面Portainer的更新方法 - 没想到吧</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="for all my love,"> 
+    <meta name="description" content="for all my love,1.停止旧的容器
+docker stop portainer
+2.删除旧的容器
+docker rm portainer
+3.删除旧的镜像
+docker rmi portainer/portainer,"> 
     <meta name="author" content="JMLin"> 
     <link rel="alternative" href="atom.xml" title="没想到吧" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -35,69 +40,86 @@
 <body class="loading">
     <span id="config-title" style="display:none">没想到吧</span>
     <div id="loader"></div>
-    <div id="single" class="page">
-    <div id="top">
-        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
-    </div>
-    <div class="section">
-        <div class="article">
-            <div class="main">
-                <div class="content">
-                    <div class="timeline">
-                      <h2 class="timeline-title">归档: 7篇</h2><hr>
-                      
-                      
-                        
-                          <h3 class="timeline-subtitle">2021</h3>
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-21</time>
-                          <a target="_self" href="/2021/01/21/SpringBoot%E6%95%B4%E5%90%88Quartz%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">SpringBoot整合Quartz框架实现定时任务</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-21</time>
-                          <a target="_self" href="/2021/01/21/Docker%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2Portainer%E7%9A%84%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/">Docker管理界面Portainer的更新方法</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-18</time>
-                          <a target="_self" href="/2021/01/18/Java%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0/">Java定时任务相关笔记</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-14</time>
-                          <a target="_self" href="/2021/01/14/%E6%9C%89%E5%85%B3Docker-Nginx%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/">有关Docker+Nginx的一些操作</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-12</time>
-                          <a target="_self" href="/2021/01/12/GitHub-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">GitHub+Hexo 搭建个人网站详细教程</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-11</time>
-                          <a target="_self" href="/2021/01/11/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/">新年快乐</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2021-01-11</time>
-                          <a target="_self" href="/2021/01/11/hello-world/">Hello World</a>
-                        </div>
-                      
-                    </div>
-                </div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Docker管理界面Portainer的更新方法</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
+            <div id="qr"></div>
         </div>
     </div>
+    <div class="scrollbar"></div>
 </div>
 
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Docker管理界面Portainer的更新方法</h1>
+        <div class="stuff">
+            <span>一月 21, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>1.停止旧的容器</p>
+<pre><code>docker stop portainer</code></pre>
+<p>2.删除旧的容器</p>
+<pre><code>docker rm portainer</code></pre>
+<p>3.删除旧的镜像</p>
+<pre><code>docker rmi portainer/portainer</code></pre>
+<p>4.拉取新的镜像，<strong>注意portainer从2.0.0版本镜像名字改为portainer/portainer-ce</strong></p>
+<pre><code>docker pull portainer/portainer-ce</code></pre>
+<p>5.使用新的镜像启动新的容器</p>
+<pre><code>docker run -d -p 8088:9000 -v /var/run/docker.sock:/var/run/docker.sock --restart=always --name portainer portain</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/1352002513.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/1383927243.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='https://link.hhtjim.com/163/480426313.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
 </body>
 
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>

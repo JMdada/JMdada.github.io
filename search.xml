@@ -156,4 +156,24 @@ private ScheduledExecutorService scheduledExecutorService = Executors.newSchedul
 <hr>
 ]]></content>
   </entry>
+  <entry>
+    <title>Docker管理界面Portainer的更新方法</title>
+    <url>/2021/01/21/Docker%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2Portainer%E7%9A%84%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>1.停止旧的容器</p>
+<pre><code>docker stop portainer</code></pre>
+<p>2.删除旧的容器</p>
+<pre><code>docker rm portainer</code></pre>
+<p>3.删除旧的镜像</p>
+<pre><code>docker rmi portainer/portainer</code></pre>
+<p>4.拉取新的镜像，<strong>注意portainer从2.0.0版本镜像名字改为portainer/portainer-ce</strong></p>
+<pre><code>docker pull portainer/portainer-ce</code></pre>
+<p>5.使用新的镜像启动新的容器</p>
+<pre><code>docker run -d -p 8088:9000 -v /var/run/docker.sock:/var/run/docker.sock --restart=always --name portainer portain</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>SpringBoot整合Quartz框架实现定时任务</title>
+    <url>/2021/01/21/SpringBoot%E6%95%B4%E5%90%88Quartz%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
