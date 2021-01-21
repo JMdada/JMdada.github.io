@@ -10,7 +10,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="for all my love,"> 
+    <meta name="description" content="for all my love,整合本地定时任务
+
+代码如下：
+QuartzJob：
+public class QuartzJob1 extends QuartzJobBean &amp;#123;
+    @Override
+    p,"> 
     <meta name="author" content="JMLin"> 
     <link rel="alternative" href="atom.xml" title="没想到吧" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -62,7 +68,68 @@
 
         </div>
         <div class="content markdown">
-            
+            <h2 id="整合本地定时任务"><a href="#整合本地定时任务" class="headerlink" title="整合本地定时任务"></a>整合本地定时任务</h2><p><img src="https://gitee.com/disjm/forPic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210121164106.png"></p>
+<p><img src="https://gitee.com/disjm/forPic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210121164114.png"></p>
+<p>代码如下：</p>
+<p>QuartzJob：</p>
+<pre><code>public class QuartzJob1 extends QuartzJobBean &#123;
+    @Override
+    protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException &#123;
+
+        SimpleDateFormat sdf=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+
+        System.out.println(&quot;QuartzJob1----&quot; + sdf.format(new Date()));
+    &#125;
+&#125;</code></pre>
+<p>QuartzConfig：</p>
+<pre><code>@Configuration
+    public class QuartzConfig &#123;
+    @Bean
+    public JobDetail jobDetail1()&#123;
+        return JobBuilder.newJob(QuartzJob1.class).storeDurably().build();
+    &#125;
+
+    @Bean
+    public Trigger trigger1()&#123;
+    //        SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
+    //                .withIntervalInSeconds(1) //每一秒执行一次
+    //                .repeatForever(); //永久重复，一直执行下去
+
+        //用cron表达式来设定执行的方式
+        CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(&quot;0/2 * * * * ?&quot;);
+
+        return TriggerBuilder.newTrigger()
+                .forJob(jobDetail1())
+                .withSchedule(scheduleBuilder)
+                .build();
+    &#125;
+
+    @Bean
+    public JobDetail jobDetail2()&#123;
+        QuartzJobBean quartzJob2 = new QuartzJobBean() &#123;
+            @Override
+            protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException &#123;
+                SimpleDateFormat sdf=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+                System.out.println(&quot;内部类quartzJob2----&quot; + sdf.format(new Date()));
+            &#125;
+        &#125;;
+        return JobBuilder.newJob(quartzJob2.getClass()).storeDurably().build();
+    &#125;
+
+    @Bean
+    public Trigger trigger2()&#123;
+        //JobDetail的bean注入不能省略
+        //JobDetail jobDetail3 = JobBuilder.newJob(QuartzJob2.class).storeDurably().build();
+        SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
+                .withIntervalInSeconds(2) //每2秒执行一次
+                .repeatForever(); //永久重复，一直执行下去
+
+        return TriggerBuilder.newTrigger()
+                .forJob(jobDetail2())
+                .withSchedule(scheduleBuilder).build();
+    &#125;
+&#125;</code></pre>
+<h2 id="整合定时任务插入数据库"><a href="#整合定时任务插入数据库" class="headerlink" title="整合定时任务插入数据库"></a>整合定时任务插入数据库</h2>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="">
