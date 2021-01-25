@@ -174,8 +174,8 @@ private ScheduledExecutorService scheduledExecutorService = Executors.newSchedul
   <entry>
     <title>SpringBoot整合Quartz框架实现定时任务</title>
     <url>/2021/01/21/SpringBoot%E6%95%B4%E5%90%88Quartz%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
-    <content><![CDATA[<h2 id="整合本地定时任务"><a href="#整合本地定时任务" class="headerlink" title="整合本地定时任务"></a>整合本地定时任务</h2><p><img src="https://gitee.com/disjm/forPic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210121164106.png"></p>
-<p><img src="https://gitee.com/disjm/forPic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210121164114.png"></p>
+    <content><![CDATA[<h2 id="整合本地定时任务"><a href="#整合本地定时任务" class="headerlink" title="整合本地定时任务"></a>整合本地定时任务</h2><p><img src="https://gitee.com/disjm/forPic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210121164114.png"></p>
+<p><img src="https://gitee.com/disjm/forPic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210121164106.png"></p>
 <p>代码如下：</p>
 <p>QuartzJob：</p>
 <pre><code>public class QuartzJob1 extends QuartzJobBean &#123;
