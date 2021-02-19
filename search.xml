@@ -237,4 +237,12 @@ private ScheduledExecutorService scheduledExecutorService = Executors.newSchedul
 &#125;</code></pre>
 <h2 id="整合定时任务插入数据库"><a href="#整合定时任务插入数据库" class="headerlink" title="整合定时任务插入数据库"></a>整合定时任务插入数据库</h2>]]></content>
   </entry>
+  <entry>
+    <title>apk跳过签名的方 需要root</title>
+    <url>/2021/02/19/apk%E8%B7%B3%E8%BF%87%E7%AD%BE%E5%90%8D%E7%9A%84%E6%96%B9-%E9%9C%80%E8%A6%81root/</url>
+    <content><![CDATA[<h2 id="跳过签名需要的工具"><a href="#跳过签名需要的工具" class="headerlink" title="跳过签名需要的工具"></a>跳过签名需要的工具</h2><h3 id="Root设备"><a href="#Root设备" class="headerlink" title="Root设备"></a>Root设备</h3><p>这个建议用以前的手机或者电脑安卓模拟器，因为现在的手机一般都很难root除非刷机，就怕一不小心变砖了。</p>
+<h3 id="幸运破解器-Lucky-Patcher"><a href="#幸运破解器-Lucky-Patcher" class="headerlink" title="幸运破解器 Lucky Patcher"></a>幸运破解器 Lucky Patcher</h3><p>下载链接：<a href="https://www.luckypatchers.com/lucky-patcher-all-versions/">https://www.luckypatchers.com/lucky-patcher-all-versions/</a></p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>在赋予超级权限后，在核心配置中选择跳过签名即可。</p>
+]]></content>
+  </entry>
 </search>
