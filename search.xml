@@ -17,31 +17,31 @@
   <entry>
     <title>GitHub+Hexo 搭建个人网站详细教程</title>
     <url>/2021/01/12/GitHub-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/disjm/for-pic/raw/master/v2-d4c1239e75c02e8482c22017a6c8d407_1440w.png"></p>
-<h2 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h2><p><img src="https://gitee.com/disjm/for-pic/raw/master/v2-6890485c84748900d9dae824b7f7cbb1_r.png"><br>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub，你没看错，全球最大的同性恋交友网站（逃……）。Hexo同时也是GitHub上的开源项目，参见：<a href="https://github.com/hexojs/hexo" title="hexojs/hexo">hexojs/hexo</a> 如果想要更加全面的了解Hexo，可以到其<a href="https://hexo.io/">官网Hexo</a>了解更多的细节，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</p>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h3><p>登录到GitHub,如果没有GitHub帐号，使用你的邮箱<a href="https://github.com/" title="github">注册GitHub帐号</a>, 登录后点击GitHub中的New repository创建新仓库，仓库名应该为：http://用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：<br><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210112113622.png"></p>
+    <content><![CDATA[<p><img src="https://gitee.com/disjm/for-pic/blob/master/v2-d4c1239e75c02e8482c22017a6c8d407_1440w.png"></p>
+<h2 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h2><p><img src="https://gitee.com/disjm/for-pic/blob/master/v2-6890485c84748900d9dae824b7f7cbb1_r.png"><br>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub，你没看错，全球最大的同性恋交友网站（逃……）。Hexo同时也是GitHub上的开源项目，参见：<a href="https://github.com/hexojs/hexo" title="hexojs/hexo">hexojs/hexo</a> 如果想要更加全面的了解Hexo，可以到其<a href="https://hexo.io/">官网Hexo</a>了解更多的细节，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</p>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h3><p>登录到GitHub,如果没有GitHub帐号，使用你的邮箱<a href="https://github.com/" title="github">注册GitHub帐号</a>, 登录后点击GitHub中的New repository创建新仓库，仓库名应该为：http://用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：<br><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210112113622.png"></p>
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。从<a href="https://git-scm.com/download/win" title="git下载">Git官网下载</a>， 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_720w.jpg"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_720w.jpg"></p>
 <p>或者在菜单里搜索Git Bash，设置user.name和user.email配置信息：</p>
 <pre><code>git config --global user.name &quot;你的GitHub用户名&quot;
 git config --global user.email &quot;你的GitHub注册邮箱&quot;</code></pre>
 <p>生成ssh密钥文件：</p>
 <pre><code>ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</code></pre>
 <p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹(一般是在这个路径下C:\Users\用户名.ssh)中的id_rsa.pub密钥，将内容全部复制</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113104116.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113104116.png"></p>
 <p>打开<a href="https://github.com/settings/keys" title="github密匙">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113104514.png"></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a> ：</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113104808.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113104514.png"></p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;</a> ：</p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113104808.png"></p>
 <p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，Node.js下载地址：<a href="https://nodejs.org/en/download/" title="node.js下载地址">Download | Node.js</a> 下载安装包，注意安装Node.js会包含环境变量及npm的安装，安装后，检测Node.js和npm是否安装成功，在命令行中输入 node -v 和 npm -v:</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113105112.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113105112.png"></p>
 <p>到这了，安装Hexo的环境已经全部搭建完成。</p>
 <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Hexo就是我们的个人博客网站的框架， 这里需要自己在电脑常里创建一个文件夹，可以命名为Blog（我命名为Jm_Blog），Hexo框架与以后你自己发布的网页都在这个文件夹中。创建好后,</p>
 <p>右键点击 开始：</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113110849.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113110849.png"></p>
 <p>以管理员的方式打开Windows PowerShell：</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113110930.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113110930.png"></p>
 <p>然后通过cd 命令进入这个文件夹（Blog），再接着 </p>
 <p>使用npm命令安装Hexo，输入：</p>
 <pre><code>npm install -g hexo-cli </code></pre>
@@ -62,14 +62,14 @@ hexo s</code></pre>
 <p>刚刚的三个命令依次是新建一篇博客文章、生成网页、在本地预览的操作。</p>
 <p>=============================</p>
 <h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113113008.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113113008.png"></p>
 <p>下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为：</p>
 <p>deploy:</p>
 <p>&ensp;type: git</p>
 <p>&ensp;repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git</p>
 <p>&ensp;branch: master</p>
 <p>参考如下：</p>
-<p><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113113805.png"></p>
+<p><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113113805.png"></p>
 <p>保存站点配置文件。</p>
 <p>其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。最后安装Git部署插件，输入命令：</p>
 <pre><code>npm install hexo-deployer-git --save</code></pre>
@@ -77,7 +77,7 @@ hexo s</code></pre>
 <pre><code>hexo clean 
 hexo g 
 hexo d</code></pre>
-<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a href="http://xxxx.github.io/">http://xxxx.github.io</a><br><img src="https://gitee.com/disjm/for-pic/raw/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113114152.png"></p>
+<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a href="http://xxxx.github.io/">http://xxxx.github.io</a><br><img src="https://gitee.com/disjm/for-pic/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210113114152.png"></p>
 <p>你就会发现你的博客已经上线了，可以在网络上被访问了。</p>
 ]]></content>
   </entry>
@@ -243,6 +243,26 @@ private ScheduledExecutorService scheduledExecutorService = Executors.newSchedul
     <content><![CDATA[<h2 id="跳过签名需要的工具"><a href="#跳过签名需要的工具" class="headerlink" title="跳过签名需要的工具"></a>跳过签名需要的工具</h2><h3 id="Root设备"><a href="#Root设备" class="headerlink" title="Root设备"></a>Root设备</h3><p>这个建议用以前的手机或者电脑安卓模拟器，因为现在的手机一般都很难root除非刷机，就怕一不小心变砖了。</p>
 <h3 id="幸运破解器-Lucky-Patcher"><a href="#幸运破解器-Lucky-Patcher" class="headerlink" title="幸运破解器 Lucky Patcher"></a>幸运破解器 Lucky Patcher</h3><p>下载链接：<a href="https://www.luckypatchers.com/lucky-patcher-all-versions/">https://www.luckypatchers.com/lucky-patcher-all-versions/</a></p>
 <h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>在赋予超级权限后，在核心配置中选择跳过签名即可。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/06/29/%E6%9E%97%E5%98%89%E9%B8%A3%E5%85%AD%E6%9C%88%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="财务部林嘉鸣六月学习工作总结"><a href="#财务部林嘉鸣六月学习工作总结" class="headerlink" title="财务部林嘉鸣六月学习工作总结"></a>财务部林嘉鸣六月学习工作总结</h1><hr>
+<h2 id="关于oa系统方面的内容"><a href="#关于oa系统方面的内容" class="headerlink" title="关于oa系统方面的内容"></a>关于oa系统方面的内容</h2><p>首先oa系统的测试开发网址是 <a href="https://oatest.wilmar.cn/">https://oatest.wilmar.cn</a>  账号密码先采用的是limo qwerty</p>
+<p>进入后在系统右上方进入系统后台，其中与OA开发相关的就是*<strong>流程引擎**<em>、</em></strong>建模引擎*<strong>、以及 **<em>内容引擎</em></strong>。</p>
+<p>1、一般来说操作的步骤都是先在 <strong>流程引擎</strong> 中的 <strong>表单管理</strong> 部分按照需求新建自定义表单，表单中若有相关关键选择字段则需要在主表单中将其属性选择为浏览按钮并设为自定义单选，同时创建一个子表单，且子表单的字段和上面的字段同名。</p>
+<p>2、然后这时候就要去 <strong>建模引擎</strong> 左侧列表中找到合适的区域新建一个与你项目主表同名的应用，然后在该应用中创建子字段相应的模块并关联相应的表。<br>然后在相应的模块中的设置初始化新建布局，同时还要记得在权限中授予角色新建权限，预览时才能有操作。<br>然后重复类似上面的操作新建这个子字段的查询，<br>然后在浏览框中为其创建相应的浏览框，<br>最后在查询界面中右击鼠标选择预览查看效果。</p>
+<p>3、最后在流程引擎中的路径管理下面找到路径设置，其中找到广州流程然后添加路径，填写相应信息，选择对应的表单，然后流程状态改为测试。<br>然后在流转设置中的图形编辑处按照需求的描述画出流程图，并根据此来设定相应的节点信息情况，同时配置布局。</p>
+<h2 id="关于rpa自动化的内容"><a href="#关于rpa自动化的内容" class="headerlink" title="关于rpa自动化的内容"></a>关于rpa自动化的内容</h2><p>首先使用的工具是 <strong>UIPATH</strong> 进入页面后可以设置中文，各种操作组件都显而易见。有些找不到的组件则需要去额外扩充下载。</p>
+<h2 id="关于项目管理方面的内容"><a href="#关于项目管理方面的内容" class="headerlink" title="关于项目管理方面的内容"></a>关于项目管理方面的内容</h2><p>项目管理如今采用一个网站的方式实现统一管理，地址为<a href="http://10.229.56.116/projeqtor/view/main.php">http://10.229.56.116/projeqtor/view/main.php</a>其中的内容。。。（待补充）</p>
+<h2 id="关于设备标号以及"><a href="#关于设备标号以及" class="headerlink" title="关于设备标号以及"></a>关于设备标号以及</h2><h2 id="关于AFCE申请"><a href="#关于AFCE申请" class="headerlink" title="关于AFCE申请"></a>关于AFCE申请</h2><p>1、先由oa提交 2、再去epm提交    3、等审批完发邮件</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>交换机的扩展方式有哪些？</p>
+<p>目前广泛使用的端口扩展方式包括级联扩展和堆叠技术扩展。 </p>
+<p>一、级联扩展</p>
+<p>级联扩展模式是最常规，最直接的一种扩展方式，一些构建较早的网络，都使用了集线器（HUB）作为级连的设备。因为当时集线器已经相当昂贵了，多数企业不可能选择交换机作为级连设备。那是因为大多数工作组用户接入的要求，一般就是从集线器上一个端口级连到集线架上。在这种方式下，接入能力是得到了很大的提高，但是由于一些干扰和人为因素，使得整体性能十分低下，只单纯地满足了多端口的需要，根本无暇考虑转发交换功能。现在的级连扩展模式综合考虑到不同交换机的转发性能和端口属性，通过一定的拓扑结构设计，可以方便地实现多用户接入。</p>
+<p>二、堆叠扩展，其中包括菊花链式堆叠，星型堆叠</p>
+<p>堆叠技术是目前在以太网交换机上扩展端口使用较多的另一类技术，是一种非标准化技术。各个厂商之间不支持混合堆叠，堆叠模式为各厂商制定，不支持拓扑结构。目前流行的堆叠模式主要有两种：菊花链模式和星型模式。堆叠技术的最大的优点就是提供简化的本地管理，将一组交换机作为一个对象来管理。</p>
 ]]></content>
   </entry>
 </search>
